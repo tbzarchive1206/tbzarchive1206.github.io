@@ -42,6 +42,8 @@ a { color: inherit; text-decoration: none; }
 .issue { border: 1px solid var(--ink); width: 82px; height: 82px; border-radius: 50%; display: grid; place-content: center; gap: 2px; text-align: center; font-size: 8px; line-height: 1.1; transition: background .2s ease, color .2s ease, transform .2s ease; }
 .issue b { font-size: 24px; }
 .issue:hover, .issue:focus-visible { background: var(--ink); color: var(--paper); transform: rotate(5deg); }
+.issue-pair { display: flex; gap: 12px; align-items: center; }
+.sns-issue b { font-size: 14px; line-height: .82; }
 
 .archive { padding: 8vw 2.2vw; }
 .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 4vw; }
@@ -95,6 +97,34 @@ footer a:hover { text-decoration: underline; }
 .mail-button { display: inline-flex; margin-top: 24px; padding: 14px 18px; border: 1px solid var(--ink); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; transition: background .2s, color .2s; }
 .mail-button:hover, .mail-button:focus-visible { background: var(--ink); color: var(--paper); }
 
+.sns-section { margin-top: clamp(55px, 8vw, 120px); }
+.sns-section + .sns-section { margin-top: clamp(65px, 10vw, 145px); }
+.sns-section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 22px; border-bottom: 1px solid var(--ink); padding-bottom: 16px; }
+.sns-section-head h2 { margin: 0; font: italic clamp(38px, 5vw, 72px)/.9 Georgia, serif; letter-spacing: -.05em; }
+.sns-section-head p { margin: 0; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.sns-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.sns-link { min-height: 125px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; padding: 16px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--folder); transition: background .2s, color .2s; }
+.sns-link:hover, .sns-link:focus-visible { background: var(--ink); color: var(--paper); }
+.sns-link strong { font-size: clamp(17px, 1.7vw, 25px); line-height: .95; letter-spacing: -.045em; }
+.sns-link span { font: 9px "Courier New",monospace; letter-spacing: .08em; text-transform: uppercase; }
+.sns-link small { font: 9px/1.35 "Courier New",monospace; letter-spacing: .04em; }
+.sns-link.inactive strong::after { content: " / INACTIVE"; font: 9px "Courier New",monospace; letter-spacing: .05em; vertical-align: middle; }
+.sns-link.tba { cursor: default; color: var(--ink); }
+.sns-link.tba:hover { background: var(--folder); }
+.member-accordion { border-top: 1px solid var(--ink); }
+.member-accordion + .member-accordion { border-top: 0; }
+.member-accordion summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 60px 1fr 30px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--ink); }
+.member-accordion summary::-webkit-details-marker { display: none; }
+.member-accordion summary span { font: 10px "Courier New",monospace; }
+.member-accordion summary strong { font-size: clamp(27px, 3vw, 48px); line-height: .85; letter-spacing: -.06em; text-transform: uppercase; }
+.member-accordion summary i { font-style: normal; font-size: 22px; text-align: right; }
+.member-accordion[open] summary i { transform: rotate(45deg); }
+.member-content { padding: 24px 0 38px; border-bottom: 1px solid var(--ink); }
+.member-content h3 { margin: 0 0 10px; font: 10px "Courier New",monospace; letter-spacing: .12em; text-transform: uppercase; }
+.member-content h3:not(:first-child) { margin-top: 28px; }
+.member-content .sns-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.member-content .sns-link { min-height: 100px; }
+
 @media (max-width: 800px) {
   .topbar { grid-template-columns: 1fr 1fr; }
   .topbar p { display: none; }
@@ -113,6 +143,7 @@ footer a:hover { text-decoration: underline; }
   footer p:nth-child(2), footer a:nth-child(3), footer a:last-child { text-align: left; }
   footer a:nth-child(even), footer p:nth-child(even) { text-align: right; }
   .subpage-header { grid-template-columns: 1fr; }
+  .sns-grid, .member-content .sns-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 520px) {
@@ -127,6 +158,7 @@ footer a:hover { text-decoration: underline; }
   .hero-foot p { width: calc(100% - 78px); font-size: 14px; line-height: 1.25; }
   .issue { width: 64px; height: 64px; }
   .issue b { font-size: 20px; }
+  .sns-issue b { font-size: 11px; }
   .archive { padding-top: 70px; padding-bottom: 70px; }
   .section-head h2 { font-size: 48px; }
   .folder-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -143,6 +175,10 @@ footer a:hover { text-decoration: underline; }
   .subpage-intro { font-size: 21px; }
   .content-row { grid-template-columns: 1fr; gap: 12px; }
   .content-row p { font-size: 16px; }
+  .sns-section-head { display: block; }
+  .sns-section-head p { margin-top: 12px; }
+  .member-accordion summary { grid-template-columns: 38px 1fr 25px; }
+  .member-content .sns-grid, .sns-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 360px) {
