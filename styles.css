@@ -112,6 +112,7 @@ footer a:hover { text-decoration: underline; }
 .sns-link.tba { cursor: default; color: var(--ink); }
 .sns-link.tba:hover { background: var(--folder); }
 .member-accordion { border-top: 1px solid var(--ink); }
+.sns-section > .member-accordion:first-of-type { border-top: 0; }
 .member-accordion + .member-accordion { border-top: 0; }
 .member-accordion summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 60px 1fr 30px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--ink); }
 .member-accordion summary::-webkit-details-marker { display: none; }
