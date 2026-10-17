@@ -8,7 +8,7 @@ const files = [
   ["07", "The B Japan", "Japanese fanclub", "https://tbzarchive1206.github.io/thebjapan/"],
   ["08", "Bubble Media", "Bubble Media", "https://tbzarchive1206.github.io/bubble-archive/"],
   ["09", "Fromm Media", "Fromm Media", "https://tbzarchive1206.github.io/fromm-media/"],
-  ["10", "Personal Instagrams", "Individual THE BOYZ Instagram accounts", "https://tbzarchive1206.github.io/insta-post-archive/"],
+  ["10", "Instagram", "Individual THE BOYZ Instagram accounts", "https://tbzarchive1206.github.io/insta-post-archive/"],
   ["11", "Instagram Stories", "Individual THE BOYZ Instagram Stories", "https://tbzarchive1206.github.io/insta-stories-archive/"],
   ["12", "Concerts & Fancons", "Concerts Archive", "https://tbzarchive1206.github.io/concerts/"],
   ["13", "Radio", "Radio, DJ", "https://tbzarchive1206.github.io/radio-archive/"],
