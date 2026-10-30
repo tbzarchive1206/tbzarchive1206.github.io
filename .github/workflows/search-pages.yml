@@ -1,0 +1,54 @@
+name: Update shared search and deploy home
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '47 6,18 * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: home-search-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Update search, retain last good source on failure
+        run: node scripts/update-search.mjs
+      - name: Check shared search
+        run: node --test tests/search.test.mjs
+      - name: Save last good snapshots
+        run: |
+          git add search/index.json search/sources
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update shared search snapshots'
+            git push
+          fi
+      - name: Prepare static website
+        run: |
+          mkdir _site
+          cp *.html *.css *.js CNAME icon.png _site/
+          cp -r search _site/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
