@@ -7,7 +7,7 @@
   <meta name="description" content="Fan-made media archive for THE BOYZ and THE B">
   <link rel="icon" type="image/png" href="./icon.png">
   <link rel="apple-touch-icon" href="./icon.png">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=global-search-1">
 </head>
 <body>
   <main>
@@ -32,8 +32,9 @@
     <section class="archive" id="archive">
       <div class="section-head">
         <div><span class="kicker">CONTENTS</span><h2>Open a folder</h2></div>
-        <label class="search">Search <input id="search" placeholder="TYPE TO FILTER…" aria-label="Search archive"></label>
+        <form class="search" action="/search/" method="get"><label for="search">Search archive</label> <input id="search" name="q" placeholder="MEMBER, TITLE OR DATE…" aria-describedby="searchScope"><button type="submit">SEARCH →</button></form>
       </div>
+      <p id="searchScope">Search Livestreams, Radio, Events and Scans. Try Q, Changmin, 큐 or 260511.</p>
       <div class="folder-grid" id="folders"></div>
       <p class="empty" id="empty" hidden>No folder found. Try another keyword.</p>
     </section>
@@ -54,7 +55,7 @@
       <a href="#top">Back to top ↑</a>
     </footer>
   </main>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=global-search-1"></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "86b44fc0df8847b9a0b9c48b6766cd38"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

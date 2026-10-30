@@ -69,4 +69,4 @@ function render(query = "") {
 }
 
 render();
-search.addEventListener("input", (event) => render(event.target.value));
+// Global search is a native GET form; the folder directory stays visible.

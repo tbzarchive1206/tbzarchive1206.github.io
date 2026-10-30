@@ -192,3 +192,5 @@ footer a:hover { text-decoration: underline; }
   .folder:hover { transform: none; }
   .special-row a:hover b { font-family: Arial, Helvetica, sans-serif; font-style: normal; font-weight: 700; }
 }
+
+.search button{margin-top:10px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:9px 14px;font:11px Arial,sans-serif;cursor:pointer}.search input:focus-visible,.search button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}#searchScope{font:12px/1.6 Arial,sans-serif;margin:0 0 26px;max-width:650px}
