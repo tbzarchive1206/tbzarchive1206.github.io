@@ -1,0 +1,36 @@
+/* Shared mobile navigation. Keep the same version in every archive. */
+#tbz-mobile-nav { display: none; }
+@media (max-width: 800px) {
+  html { scroll-padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+  /* A separate flow element preserves each archive's existing footer padding. */
+  #tbz-mobile-nav-space { display: block; clear: both; flex: 0 0 auto; height: calc(100px + env(safe-area-inset-bottom, 0px)); }
+  #tbz-mobile-nav {
+    position: fixed; inset: auto auto calc(16px + env(safe-area-inset-bottom, 0px)) 50%;
+    transform: translateX(-50%); z-index: 40; display: flex; gap: 10px;
+    width: max-content; padding: 0; margin: 0; border: 0; background: transparent;
+    color: #1746d1; isolation: isolate;
+  }
+  #tbz-mobile-nav > a, #tbz-mobile-nav > button {
+    box-sizing: border-box; display: grid; place-items: center; flex: 0 0 48px;
+    width: 48px; height: 48px; min-width: 48px; min-height: 48px; max-width: 48px;
+    padding: 0; margin: 0; border: 1px solid #1746d1; border-radius: 50%;
+    background: #fff; color: #1746d1; text-decoration: none;
+    box-shadow: 0 4px 16px rgba(16,43,104,.17); cursor: pointer;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    font: 400 16px/1 Arial, sans-serif; letter-spacing: normal;
+  }
+  #tbz-mobile-nav svg { display: block; width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+  #tbz-mobile-nav > :focus-visible { outline: 3px solid #1746d1; outline-offset: 4px; }
+  #tbz-mobile-nav > :active { background: #1746d1; color: #fff; }
+  /* Hide redundant home links only after the replacement navigation is ready. */
+  html.tbz-mobile-nav-ready .tbz-mobile-home-link,
+  html.tbz-mobile-nav-ready .tbz-mobile-home-separator { display: none !important; }
+  /* Media viewers retain their own close controls and sit above the dock. */
+  body:has(dialog[open]) #tbz-mobile-nav,
+  body:has([aria-modal="true"]) #tbz-mobile-nav,
+  body:has(.player-overlay:not([hidden])) #tbz-mobile-nav,
+  body:has(.gallery-dialog:not([hidden])) #tbz-mobile-nav { visibility: hidden; }
+  @media (hover: hover) {
+    #tbz-mobile-nav > :hover { background: #1746d1; color: #fff; }
+  }
+}

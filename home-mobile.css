@@ -1,0 +1,30 @@
+/* Mobile folder directory. Desktop keeps the original folder design. */
+@media (max-width:800px) {
+  .hero {min-height:auto;gap:28px;padding:24px 16px 28px}
+  .hero h1 {font-size:clamp(44px,16vw,120px);line-height:.88;letter-spacing:-.075em}
+  .hero h1 .outline {text-align:left;-webkit-text-stroke:1px var(--ink)}
+  .hero-foot {justify-content:center}
+  .hero-foot>p {display:none}
+  .issue-pair {width:100%;justify-content:center;gap:14px}
+  .issue {width:60px;height:60px}
+  .issue span {display:none}
+  .issue b {font-size:20px}
+  .sns-issue b {font-size:13px}
+  .archive {padding:24px 16px 36px}
+  .section-head>div {display:none}
+  .section-head {margin-bottom:22px}
+  .search {margin-top:0}
+  .search input {width:100%;font-size:16px}
+  #searchScope:empty {display:none}
+  .folder-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+  .folder {container-type:inline-size;min-width:0;min-height:0;aspect-ratio:3/2;padding:0}
+  .folder::before {inset:14% 0 0}
+  .folder-tab {width:58%;height:calc(14% + 1px);padding:3% 5% 0;font-size:clamp(6px,4cqw,8px);letter-spacing:.04em;border-top-right-radius:10px}
+  .folder-arrow {top:23%;right:7%;font-size:clamp(12px,9cqw,20px)}
+  .folder-body {position:absolute;inset:14% 0 0;height:auto;min-width:0;padding:0 7% 7%;justify-content:flex-end;gap:6px}
+  .folder h3 {font-size:clamp(12px,10.5cqw,22px);line-height:1.05;letter-spacing:-.04em;overflow-wrap:normal}
+  .folder small {display:block;margin-top:0;font-size:6px;letter-spacing:.03em;overflow-wrap:anywhere}
+  .folder:hover,.folder:focus-visible {transform:none}
+  .folder-desktop-prefix {display:none}
+  .specials {padding:32px 16px}
+}

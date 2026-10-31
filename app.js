@@ -12,7 +12,7 @@ const files = [
   ["11", "Instagram Stories", "Individual THE BOYZ Instagram Stories", "https://tbzarchive1206.github.io/insta-stories-archive/"],
   ["12", "Concerts & Fancons", "Concerts Archive", "https://tbzarchive1206.github.io/concerts/"],
   ["13", "Radio", "Radio, DJ", "https://tbzarchive1206.github.io/radio-archive/"],
-  ["14", "Festival Performances", "Festivals, performances", "https://tbzarchive1206.github.io/festivals-performances"],
+  ["14", "Performances", "Festivals, performances", "https://tbzarchive1206.github.io/festivals-performances"],
   ["15", "Variety Programs", "Youtube and TV show appearances", "https://tbzarchive1206.github.io/variety-programs"],
   ["16", "Weibo Media", "Weibo Media", "https://tbzarchive1206.github.io/weibo/"],
   ["17", "Xiaohongshu Media", "Xiaohongshu Media", "https://tbzarchive1206.github.io/xiaohongshu/"],
@@ -40,7 +40,7 @@ function createFolder([number, title, description, href]) {
 
   const tab = document.createElement("span");
   tab.className = "folder-tab";
-  tab.textContent = `FILE ${number}`;
+  tab.innerHTML = `<span class="folder-desktop-prefix">FILE </span>${number}`;
 
   const arrow = document.createElement("span");
   arrow.className = "folder-arrow";
